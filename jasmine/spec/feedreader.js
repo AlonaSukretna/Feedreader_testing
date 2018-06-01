@@ -61,11 +61,11 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-         var body = document.body;
+      
          var menuIcon = document.querySelector(".menu-icon-link");
 
             it("has 'menu-hidden' initially", function() {
-              expect(body.className).toContain("menu-hidden");
+             expect($('body').hasClass('menu-hidden')).toBe(true);
             });
             /* TODO: Write a test that ensures the menu changes
              * visibility when the menu icon is clicked. This test
@@ -74,9 +74,9 @@ $(function() {
              */
             it("toggles the class 'menu-hidden' on clicking menu icon", function() {
               menuIcon.click();
-              expect(body.className).not.toContain("menu-hidden");
+               expect($('body').hasClass('menu-hidden')).toBe(false);
               menuIcon.click();
-              expect(body.className).toContain("menu-hidden");
+               expect($('body').hasClass('menu-hidden')).toBe(true);
             });
 
     });
